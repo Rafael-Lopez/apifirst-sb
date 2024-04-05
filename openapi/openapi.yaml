@@ -46,6 +46,10 @@ paths:
     $ref: 'paths/users_{username}.yaml'
   '/v1/customers':
     $ref: 'paths/v1/customers.yaml'
+  '/v1/customers/{customer_id}':
+    #The underscore here is a placeholder for the /, since we cannot use it because we are defining a path.
+    #The final path will be v1/customers/someCustomerId
+    $ref: 'paths/v1/customers_{customer_id}.yaml' 
 security: 
   -  basic_auth: []    
 components:
