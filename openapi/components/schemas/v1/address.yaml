@@ -3,7 +3,7 @@ properties:
   id: 
     type: string
     format: uuid
-    description: Unique identifier representing a specific customer
+    description: Unique identifier representing a specific address
   addressLine1: 
     type: string
     description: Address Line 1
