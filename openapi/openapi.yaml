@@ -22,22 +22,15 @@ externalDocs:
   description: "Find out how to create a GitHub repo for your OpenAPI definition."
   url: 'https://github.com/Redocly/create-openapi-repo'
 tags:
-#   - name: Echo
-#     description: "Example echo operations."
+  - name: Customer
+    description: "Customer operations."
   - name: User
     description: "Example actions on user accounts."
-#   - name: Admin
-#     description: "Example operations reserved for administrators."
-#   - name: Info
-#     description: "Example operations for retrieving information."
-#   - name: Tag
-#     description: "This is a tag description."
 x-tagGroups:
   - name: General
     tags:
       - User
-#       - Info
-#       - Echo
+      - Customers
 #   - name: Administration
 #     tags:
 #       - Admin
@@ -51,16 +44,10 @@ servers:
 paths:
   '/users/{username}':
     $ref: 'paths/users_{username}.yaml'
-  '/user':
-    $ref: 'paths/user.yaml'
-  '/user/list':
-    $ref: 'paths/user-status.yaml'
-  # /pathItem:
-  #   $ref: paths/pathItem.yaml
-  # /pathItemWithExamples:
-  #   $ref: paths/pathItemWithExamples.yaml
-  # '/echo':
-  #   $ref: 'paths/echo.yaml'
+  '/v1/customers':
+    $ref: 'paths/v1/customers.yaml'
+security: 
+  -  basic_auth: []    
 components:
   securitySchemes:
     main_auth:
