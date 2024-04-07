@@ -1,0 +1,20 @@
+# New customer object to prevent leakage of unnecessary information (anti-corruption layer).
+# We create a new customer object to represent properties in the order that we don't necessarily need to have in the order context.
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Unique identifier representing a specific customer
+  name:  
+    $ref: name.yaml
+  shipToAddress:
+    $ref: address.yaml  
+  billToAddress:
+    $ref: address.yaml
+  email:
+    type: string
+  phone:
+    type: string
+  selectedPaymentMethod:
+    $ref: payment_method.yaml
