@@ -5,8 +5,8 @@ properties:
     format: uuid
     description: Unique identifier representing a specific product
   description:
-      type: string  
-      description: The description of the product
+    type: string  
+    description: The description of the product
   price:
     type: string
     pattern: ^-?(?:0|[1-9]\d{0,2}(?:,?\d{3})*)(?:\.\d+)?$
