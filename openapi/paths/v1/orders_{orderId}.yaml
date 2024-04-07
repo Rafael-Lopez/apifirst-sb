@@ -1,13 +1,13 @@
 get: 
   tags: 
-    -  Product
-  summary: Get a product by ID  
-  description: Get a product by ID 
-  operationId: getProductById
+    -  Order
+  summary: Get an order by ID  
+  description: Get an order by ID 
+  operationId: getOrderById
   parameters: 
-    - name: product_id
+    - name: orderId
       in: path  
-      description: The ID of the product to retrieve
+      description: The ID of the order to retrieve
       required: true
       schema: 
         type: string
@@ -18,7 +18,7 @@ get:
       content: 
         application/json:
           schema: 
-            $ref: ../../components/schemas/v1/product.yaml
+            $ref: ../../components/schemas/v1/order.yaml
     '400':
       description: Bad Request 
     '404':
