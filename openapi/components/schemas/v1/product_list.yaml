@@ -1,2 +1,3 @@
 type: array
-$ref: product.yaml
+items:
+  $ref: product.yaml
