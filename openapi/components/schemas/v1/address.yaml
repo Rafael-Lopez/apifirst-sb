@@ -29,3 +29,8 @@ properties:
     description: Zip Code
     maxLength: 10
     minLength: 5
+required: 
+  - addressLine1
+  - city
+  - state
+  - zip     

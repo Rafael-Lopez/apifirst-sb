@@ -20,3 +20,6 @@ properties:
     description: Name Suffix
     maxLength: 25
     minLength: 0
+required: 
+  - firstName
+  - lastName    
