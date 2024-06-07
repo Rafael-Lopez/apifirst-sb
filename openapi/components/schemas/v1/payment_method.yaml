@@ -7,14 +7,19 @@ properties:
     type: string
     maxLength: 100
     minLength: 2
+    example: Some Name
   cardNumber:
     type: integer
+    example: 1234567898745
   expiryMonth:
     type: integer
+    example: 12
   expiryYear:
     type: integer
+    example: 24
   cvv:
     type: integer
+    example: 123
   dateCreated:
     type: string
     format: date-time
