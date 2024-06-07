@@ -3,22 +3,27 @@ properties:
   id:
     type: string
     format: uuid
-    description: Unique identifier representing a specific order
+    description: The unique identifier of the order
+    readOnly: true
   customer:
-    $ref: order_customer.yaml  
+    $ref: order_customer.yaml
   orderStatus:
     type: string
+    enum: [NEW, HOLD, SHIPPED, DELIVERED, CLOSED]
+    default: NEW
   shipmentInfo:
-    type: string    
+    type: string
+    minLength: 1
+    maxLength: 255
   orderLines:
     type: array
     items: 
       $ref: order_line.yaml  
   dateCreated:
-    type: string
-    format: date-time
-    description: The date the product was created
+    $ref: ../common/iso_timestamp.yaml
   dateUpdated:
-    type: string
-    format: date-time
-    description: The date the product was updated  
+    $ref: ../common/iso_timestamp.yaml
+required:
+  - customer
+  - orderStatus
+  - orderLines

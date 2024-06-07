@@ -4,18 +4,44 @@ properties:
     type: string
     format: uuid
     description: Unique identifier representing a specific address
+    readOnly: true
   addressLine1: 
     type: string
     description: Address Line 1
+    maxLength: 100
+    minLength: 3
+    example: 123 Some St.
   addressLine2: 
-    type: string
+    type:
+      - string
+      - 'null'
     description: Address Line 2
+    maxLength: 100
+    minLength: 3
   city:
     type: string
     description: City
+    maxLength: 100
+    minLength: 2
+    example: St. Petersburg
   state:
     type: string
-    description: State
+    description: 2-character state code
+    maxLength: 2
+    minLength: 2
+    example: FL
   zip: 
     type: string
     description: Zip Code
+    maxLength: 10
+    minLength: 5
+    example: 33701
+  dateCreated:
+    $ref: ../common/iso_timestamp.yaml
+  dateUpdated:
+    $ref: ../common/iso_timestamp.yaml
+required: 
+  - addressLine1
+  - city
+  - state
+  - zip     

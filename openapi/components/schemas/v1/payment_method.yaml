@@ -3,19 +3,31 @@ properties:
   id: 
     type: string
     format: uuid
+    readOnly: true
   displayName: 
     type: string
+    maxLength: 100
+    minLength: 2
+    example: Some Name
   cardNumber:
     type: integer
+    example: 1234567898745
   expiryMonth:
     type: integer
+    example: 12
   expiryYear:
     type: integer
+    example: 24
   cvv:
     type: integer
+    example: 123
   dateCreated:
-    type: string
-    format: date-time
+    $ref: ../common/iso_timestamp.yaml
   dateUpdated:
-    type: string
-    format: date-time
+    $ref: ../common/iso_timestamp.yaml
+required: 
+  - displayName
+  - cardNumber
+  - expiryMonth
+  - expiryYear
+  - cvv
