@@ -3,12 +3,20 @@ properties:
   prefix:
     type: string
     description: Name Prefix
+    maxLength: 25
+    minLength: 0
   firstName:
     type: string
     description: First Name
+    maxLength: 100
+    minLength: 2
   lastName:
     type: string
     description: Last Name
+    maxLength: 100
+    minLength: 2
   suffix:
     type: string  
     description: Name Suffix
+    maxLength: 25
+    minLength: 0
