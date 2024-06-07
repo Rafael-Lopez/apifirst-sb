@@ -17,3 +17,30 @@ get:
         application/json:         
           schema: 
             $ref: ../../components/schemas/Problem.yaml
+post: 
+  tags: 
+    -  Customer
+  summary: Create a new customer
+  description: Create a new customer
+  operationId: createCustomer
+  requestBody: 
+    content: 
+      application/json:
+        schema: 
+          $ref: ../../components/schemas/v1/customer.yaml    
+  responses: 
+    '201':
+      description: Created
+      headers: 
+        Location:
+          description: The location of the new customer
+          schema: 
+            type: string
+            format: uri
+            example: /v1/customers/f6192865-0c0a-4855-8434-5aa7958ab715
+    '400':
+      description: Bad request
+      content: 
+        application/json:         
+          schema: 
+            $ref: ../../components/schemas/Problem.yaml            
