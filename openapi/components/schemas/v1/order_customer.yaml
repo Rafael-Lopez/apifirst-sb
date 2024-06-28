@@ -14,6 +14,7 @@ properties:
     $ref: address.yaml
   email:
     type: string
+    nullable: true
   phone:
     type: string
   selectedPaymentMethod:

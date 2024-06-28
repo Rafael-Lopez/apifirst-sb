@@ -4,6 +4,8 @@ import com.lopez.rafael.apifirst_server.repositories.CustomerRepository;
 import com.lopez.rafael.apifirst_server.repositories.OrderRepository;
 import com.lopez.rafael.apifirst_server.repositories.ProductRepository;
 import guru.springframework.apifirst.model.Customer;
+import guru.springframework.apifirst.model.Order;
+import guru.springframework.apifirst.model.Product;
 import jakarta.servlet.Filter;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ public class BaseTest {
     public MockMvc mockMvc;
 
     Customer testCustomer;
+    Product testProduct;
+    Order testOrder;
 
     @BeforeEach
     public void setUp() {
@@ -34,6 +38,8 @@ public class BaseTest {
                 .addFilter(validationFilter)
                 .build();
         this.testCustomer = customerRepository.findAll().iterator().next();
+        this.testProduct = productRepository.findAll().iterator().next();
+        this.testOrder = orderRepository.findAll().iterator().next();
     }
 
 }
