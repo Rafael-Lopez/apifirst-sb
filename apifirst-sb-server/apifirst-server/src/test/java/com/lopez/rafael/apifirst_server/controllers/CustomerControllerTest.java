@@ -10,6 +10,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+// For some reason the tests only work when run from the terminal, not through the Maven tab of IntelliJ
 @SpringBootTest
 class CustomerControllerTest extends BaseTest {
 
@@ -20,6 +21,15 @@ class CustomerControllerTest extends BaseTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()", greaterThan(0)));
+    }
+
+    @DisplayName("Test Get Customer By Id")
+    @Test
+    public void testGetCustomerById() throws Exception {
+        mockMvc.perform(get(CustomerController.BASE_URL + "/{customerId}", testCustomer.getId())
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(testCustomer.getId().toString()));
     }
 
 }
