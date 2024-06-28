@@ -1,13 +1,12 @@
 type: object
 properties: 
   prefix:
-    type:
-      - string
-      - 'null'
+    type: string
     description: Name Prefix
     maxLength: 25
     minLength: 0
     example: Mr.
+    nullable: true
   firstName:
     type: string
     description: First Name
@@ -21,12 +20,11 @@ properties:
     minLength: 2
     example: Lopez
   suffix:
-    type:
-      - string
-      - 'null'  
+    type: string 
     description: Name Suffix
     maxLength: 25
     minLength: 0
+    nullable: true
 required: 
   - firstName
   - lastName    
