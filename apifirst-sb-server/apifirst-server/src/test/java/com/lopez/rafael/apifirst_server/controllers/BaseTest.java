@@ -1,5 +1,6 @@
 package com.lopez.rafael.apifirst_server.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lopez.rafael.apifirst_server.repositories.CustomerRepository;
 import com.lopez.rafael.apifirst_server.repositories.OrderRepository;
 import com.lopez.rafael.apifirst_server.repositories.ProductRepository;
@@ -25,6 +26,8 @@ public class BaseTest {
     WebApplicationContext wac;
     @Autowired
     Filter validationFilter;
+    @Autowired
+    ObjectMapper objectMapper;
 
     public MockMvc mockMvc;
 
