@@ -5,6 +5,7 @@ properties:
     format: uuid
     description: Unique identifier representing a specific address
     readOnly: true
+    nullable: true
   addressLine1: 
     type: string
     description: Address Line 1
