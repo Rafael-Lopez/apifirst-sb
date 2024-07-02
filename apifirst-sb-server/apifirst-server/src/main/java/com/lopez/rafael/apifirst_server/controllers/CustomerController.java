@@ -4,11 +4,9 @@ import com.lopez.rafael.apifirst_server.services.CustomerService;
 import guru.springframework.apifirst.model.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 
@@ -31,4 +29,11 @@ public class CustomerController {
     public ResponseEntity<Customer> getCustomerById(@PathVariable("customerId") UUID customerId) {
         return ResponseEntity.ok(customerService.getCustomerById(customerId));
     }
+
+    @PostMapping
+    ResponseEntity<Void> saveNewCustomer(@RequestBody Customer customer){
+        Customer savedCustomer = customerService.saveNewCustomer(customer);
+        return ResponseEntity.created(URI.create(BASE_URL + "/" + savedCustomer.getId())).build();
+    }
+
 }

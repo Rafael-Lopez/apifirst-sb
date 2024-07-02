@@ -4,6 +4,7 @@ properties:
     type: string
     format: uuid
     readOnly: true
+    nullable: true
   displayName: 
     type: string
     maxLength: 100
