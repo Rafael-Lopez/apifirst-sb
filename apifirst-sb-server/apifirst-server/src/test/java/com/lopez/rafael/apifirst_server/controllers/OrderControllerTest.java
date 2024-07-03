@@ -37,7 +37,7 @@ class OrderControllerTest extends BaseTest {
     void testCreateOrder() throws Exception {
         OrderCreate orderCreate = OrderCreate.builder()
                 .customerId(testCustomer.getId())
-                .selectPaymentMethod(testCustomer.getPaymentMethods().get(0).getId())
+                .selectPaymentMethodId(testCustomer.getPaymentMethods().get(0).getId())
                 .orderLines(Arrays.asList(OrderLineCreate.builder()
                         .productId(testProduct.getId())
                         .orderQuantity(1)
